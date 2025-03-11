@@ -1,7 +1,7 @@
 import { NextApiRequest } from "next";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest, { params }) {
+export async function GET(req: NextRequest) {
     const searchParams = req.nextUrl.searchParams
     const title = searchParams.get('title')
     console.log(title)

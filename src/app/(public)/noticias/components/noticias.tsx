@@ -3,15 +3,27 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getNoticias } from "../actions/fetchNoticias";
+import { error } from "console";
 
 
-export default async function NoticiasSection() {
+export default function NoticiasSection() {
   const router = useRouter()
-  const [noticias, setNoticias] = useState([]);
+  const [noticias, setNoticias] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  await getNoticias().then(data => {
-    setNoticias(data)
-  })
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const data = await getNoticias();
+        setNoticias(data);
+      } catch(error) {
+        console.error("Erro ao buscar notícias:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, [])
 
   return (
     <div>
@@ -20,7 +32,7 @@ export default async function NoticiasSection() {
           noticias.map((noticia: any) => {
             return <li
             onClick={() => router.push(`/noticias/${noticia.id}`)} 
-            key={noticia.id}> {noticia.title}</li>
+            key={noticia.id} style={{ cursor: "pointer" }}> {noticia.title}</li>
           })
         : <>Carregando noticias ....</>}
       </ul>

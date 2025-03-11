@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/fabri/OneDrive/%C3%81rea%20de%20Trabalho/noticias_next/projeto/src/app/%28public%29/noticias/layout.tsx"],"sourcesContent":["export default function DashboardLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  return (\r\n    <section>\r\n      <h1>Central de notícias</h1>\r\n      {children}\r\n    </section>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;AAAe,SAAS,gBAAgB,EACtC,QAAQ,EAGT;IACC,qBACE,8OAAC;;0BACC,8OAAC;0BAAG;;;;;;YACH;;;;;;;AAGP"}},
+    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

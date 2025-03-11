@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 55, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/fabri/OneDrive/%C3%81rea%20de%20Trabalho/noticias_next/projeto/src/app/api/noticias/route.ts"],"sourcesContent":["import { NextApiRequest } from \"next\";\r\nimport { NextRequest, NextResponse } from \"next/server\";\r\n\r\nexport async function GET(req: NextRequest) {\r\n    const searchParams = req.nextUrl.searchParams\r\n    const title = searchParams.get('title')\r\n    console.log(title)\r\n    const res = await fetch(\"https://api.vercel.app/blog\");\r\n    const data = await res.json()\r\n    return NextResponse.json(data)\r\n}"],"names":[],"mappings":";;;AACA;;AAEO,eAAe,IAAI,GAAgB;IACtC,MAAM,eAAe,IAAI,OAAO,CAAC,YAAY;IAC7C,MAAM,QAAQ,aAAa,GAAG,CAAC;IAC/B,QAAQ,GAAG,CAAC;IACZ,MAAM,MAAM,MAAM,MAAM;IACxB,MAAM,OAAO,MAAM,IAAI,IAAI;IAC3B,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;AAC7B"}},
+    {"offset": {"line": 68, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
