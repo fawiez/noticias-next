@@ -12,7 +12,7 @@ export function AuthButton() {
     if (session) {
       const userName = encodeURIComponent(session.user?.name || "");
       const userImage = encodeURIComponent(session.user?.image || "");
-      router.push(`/noticia?name=${userName}&image=${userImage}`);
+      router.push(`/noticias?name=${userName}&image=${userImage}`);
     }
   }, [session, router]);
 
@@ -21,7 +21,7 @@ export function AuthButton() {
       <div className="text-center p-6 rounded-lg shadow-md w-96">
         {session ? (
           <p className="text-xl font-semibold mb-4">
-            OlÃ¡, {session.user?.name}!
+            Olá, {session.user?.name}!
           </p>
         ) : (
           <button
